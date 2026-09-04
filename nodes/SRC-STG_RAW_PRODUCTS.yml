@@ -1,0 +1,82 @@
+fileVersion: 1
+id: 07a08f42-f226-4ba2-9cd8-ce2277117971
+name: STG_RAW_PRODUCTS
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: SRC
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 82f7ee10-5bd0-4c32-8c46-482d8e8ec9da
+          stepCounter: 07a08f42-f226-4ba2-9cd8-ce2277117971
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: PRODUCT_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f8a1efa8-d522-4b18-a20a-0621c1d8eeea
+                stepCounter: 6b900914-3cc8-4ba1-8ee5-9350187cf8a1
+            transform: "\"RAW_PRODUCTS\".\"PRODUCT_ID\"::INT"
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0fe44d8b-7bd7-4c76-9dc5-a8b97d6cf993
+          stepCounter: 07a08f42-f226-4ba2-9cd8-ce2277117971
+        config: {}
+        dataType: VARCHAR(100)
+        description: ""
+        name: PRODUCT_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 53827b1a-a7cb-4541-99c8-7a1066b0ee39
+                stepCounter: 6b900914-3cc8-4ba1-8ee5-9350187cf8a1
+            transform: "\"RAW_PRODUCTS\".\"PRODUCT_NAME\""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5c4a34c8-2e28-4f05-bb6b-846bccf8941d
+          stepCounter: 07a08f42-f226-4ba2-9cd8-ce2277117971
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: CATEGORY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 84a01e2b-15f7-4bb2-aa0b-640ecf65928e
+                stepCounter: 6b900914-3cc8-4ba1-8ee5-9350187cf8a1
+            transform: "\"RAW_PRODUCTS\".\"CATEGORY\""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          RAW_PRODUCTS: 6b900914-3cc8-4ba1-8ee5-9350187cf8a1
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC
+            nodeName: RAW_PRODUCTS
+        join:
+          joinCondition: FROM {{ ref('SRC', 'RAW_PRODUCTS') }} "RAW_PRODUCTS"
+        name: STG_RAW_PRODUCTS
+        noLinkRefs: []
+  name: STG_RAW_PRODUCTS
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

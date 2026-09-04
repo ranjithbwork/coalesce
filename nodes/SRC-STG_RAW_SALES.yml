@@ -1,0 +1,112 @@
+fileVersion: 1
+id: e9c38d0f-586c-4d68-b5d9-fa51842f04c4
+name: STG_RAW_SALES
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: SRC
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c5d6a340-aa68-4f57-8b96-3e7a30b7478b
+          stepCounter: e9c38d0f-586c-4d68-b5d9-fa51842f04c4
+        config: {}
+        dataType: INT
+        description: ""
+        name: SALE_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2d57365c-41b6-457b-8a2c-de0f11cad5de
+                stepCounter: 47477820-9759-4ebe-a153-d8de96e52636
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 00bfd3ac-9527-4cdc-8602-e8888b54ebb6
+          stepCounter: e9c38d0f-586c-4d68-b5d9-fa51842f04c4
+        config: {}
+        dataType: INT
+        description: ""
+        name: PRODUCT_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 633e6268-7840-4b26-95b4-90d3c2d65855
+                stepCounter: 47477820-9759-4ebe-a153-d8de96e52636
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 468ff376-cd84-4964-b208-df907f12d482
+          stepCounter: e9c38d0f-586c-4d68-b5d9-fa51842f04c4
+        config: {}
+        dataType: INT
+        description: ""
+        name: QUANTITY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d7afe1ad-2282-4855-8ed0-d5f98f475627
+                stepCounter: 47477820-9759-4ebe-a153-d8de96e52636
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 979495fc-eed5-4e24-a3c4-6b67b3925edd
+          stepCounter: e9c38d0f-586c-4d68-b5d9-fa51842f04c4
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: UNIT_PRICE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 05396501-26b5-4f56-9f71-aa174d5af8d6
+                stepCounter: 47477820-9759-4ebe-a153-d8de96e52636
+            transform: "\"RAW_SALES\".\"UNIT_PRICE\"::NUMBER(10,2)"
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 61b4f013-54b6-46f4-8330-7cf85aae62c3
+          stepCounter: e9c38d0f-586c-4d68-b5d9-fa51842f04c4
+        config: {}
+        dataType: DATE
+        description: ""
+        name: SALE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 018f0fea-9919-481d-83c7-c1c69fa56f34
+                stepCounter: 47477820-9759-4ebe-a153-d8de96e52636
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          RAW_SALES: 47477820-9759-4ebe-a153-d8de96e52636
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC
+            nodeName: RAW_SALES
+        join:
+          joinCondition: |-
+            FROM {{ ref('SRC', 'RAW_SALES') }} "RAW_SALES"
+            WHERE "RAW_SALES"."QUANTITY" IS NOT NULL
+        name: STG_RAW_SALES
+        noLinkRefs: []
+  name: STG_RAW_SALES
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

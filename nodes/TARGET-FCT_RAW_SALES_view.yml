@@ -1,0 +1,196 @@
+fileVersion: 1
+id: 7afe9f84-e895-471c-a64f-503c63019c67
+name: FCT_RAW_SALES_view
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: TARGET
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6885926f-0365-4c5d-9a62-b100fa89e14a
+          stepCounter: 7afe9f84-e895-471c-a64f-503c63019c67
+        config: {}
+        dataType: INT
+        description: ""
+        name: SALE_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c5d6a340-aa68-4f57-8b96-3e7a30b7478b
+                stepCounter: e9c38d0f-586c-4d68-b5d9-fa51842f04c4
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 82218141-a913-4bc8-bce4-dcd1f20ae24f
+          stepCounter: 7afe9f84-e895-471c-a64f-503c63019c67
+        config: {}
+        dataType: INT
+        description: ""
+        name: PRODUCT_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 00bfd3ac-9527-4cdc-8602-e8888b54ebb6
+                stepCounter: e9c38d0f-586c-4d68-b5d9-fa51842f04c4
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e8898aad-f95e-4d5d-8b2a-4086af15f64d
+          stepCounter: 7afe9f84-e895-471c-a64f-503c63019c67
+        config: {}
+        dataType: INT
+        description: ""
+        name: QUANTITY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 468ff376-cd84-4964-b208-df907f12d482
+                stepCounter: e9c38d0f-586c-4d68-b5d9-fa51842f04c4
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 71f9fb0b-c164-4262-a5d7-c184a42e56b6
+          stepCounter: 7afe9f84-e895-471c-a64f-503c63019c67
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: UNIT_PRICE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 979495fc-eed5-4e24-a3c4-6b67b3925edd
+                stepCounter: e9c38d0f-586c-4d68-b5d9-fa51842f04c4
+            transform: "\"STG_RAW_SALES\".\"UNIT_PRICE\"::NUMBER(10,2)"
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d0192da7-b411-4afc-90e4-ff451377808b
+          stepCounter: 7afe9f84-e895-471c-a64f-503c63019c67
+        config: {}
+        dataType: DATE
+        description: ""
+        name: SALE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 61b4f013-54b6-46f4-8330-7cf85aae62c3
+                stepCounter: e9c38d0f-586c-4d68-b5d9-fa51842f04c4
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1416f0ea-6b97-4f51-b16f-8affed302319
+          stepCounter: 7afe9f84-e895-471c-a64f-503c63019c67
+        config: {}
+        dataType: VARCHAR(100)
+        description: ""
+        name: PRODUCT_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0fe44d8b-7bd7-4c76-9dc5-a8b97d6cf993
+                stepCounter: 07a08f42-f226-4ba2-9cd8-ce2277117971
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 855323ac-848a-4bd2-a4ee-68c4fa1ceeb9
+          stepCounter: 7afe9f84-e895-471c-a64f-503c63019c67
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: CATEGORY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5c4a34c8-2e28-4f05-bb6b-846bccf8941d
+                stepCounter: 07a08f42-f226-4ba2-9cd8-ce2277117971
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4cc7bf12-9af6-4935-8a1b-3b58df594616
+          stepCounter: 7afe9f84-e895-471c-a64f-503c63019c67
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemCreateDate: true
+        name: SYSTEM_CREATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2642040d-ad78-4257-84fe-d5c85db66d22
+          stepCounter: 7afe9f84-e895-471c-a64f-503c63019c67
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemUpdateDate: true
+        name: SYSTEM_UPDATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb8bbf7a-62b4-4833-af1e-2fee33b3f161
+          stepCounter: 7afe9f84-e895-471c-a64f-503c63019c67
+        config: {}
+        dataType: NUMBER(10,2)
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: TOTAL_AMOUNT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: "\"STG_RAW_SALES\".\"QUANTITY\" * \"STG_RAW_SALES\".\"UNIT_PRICE\""
+        systemColumnType: None
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          STG_RAW_PRODUCTS: 07a08f42-f226-4ba2-9cd8-ce2277117971
+          STG_RAW_SALES: e9c38d0f-586c-4d68-b5d9-fa51842f04c4
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC
+            nodeName: STG_RAW_PRODUCTS
+          - locationName: SRC
+            nodeName: STG_RAW_SALES
+        join:
+          joinCondition: |-
+            FROM {{ ref('SRC', 'STG_RAW_SALES') }} "STG_RAW_SALES"
+            INNER JOIN {{ ref('SRC', 'STG_RAW_PRODUCTS') }} "STG_RAW_PRODUCTS"
+            ON "STG_RAW_SALES"."PRODUCT_ID" = "STG_RAW_PRODUCTS"."PRODUCT_ID"
+        name: FCT_RAW_SALES_view
+        noLinkRefs: []
+  name: FCT_RAW_SALES_view
+  overrideSQL: false
+  schema: ""
+  sqlType: Fact
+  type: sql
+  version: 1
+type: Node
