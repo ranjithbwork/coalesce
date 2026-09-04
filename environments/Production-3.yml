@@ -1,0 +1,11 @@
+fileVersion: 1
+id: "3"
+mappingDefinitions:
+  SRC:
+    database: COALESCE_SOURCE
+    schema: STAGE_DATA
+  TARGET:
+    database: COALESCE_DESTINATION
+    schema: DESTINATION_DATA
+name: Production
+type: Environment
